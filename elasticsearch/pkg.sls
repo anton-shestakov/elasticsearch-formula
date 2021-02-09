@@ -16,3 +16,7 @@ elasticsearch_pkg:
     - require:
       - sls: elasticsearch.repo
     {% endif %}
+    {% if elasticsearch_map.sources %}
+    - sources:
+        - elasticsearch: {{ elasticsearch_map.sources }}
+    {% endif %}
